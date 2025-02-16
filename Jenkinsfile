@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                sh 'pip install -r scratch_fw_pytest/requirements.txt'
+                sh 'pip install pytest'
             }
         }
         stage('Run Tests') {
