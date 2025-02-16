@@ -21,7 +21,11 @@ pipeline {
         }
         stage('Run Tests') {
             steps {
-                sh 'python scratch_fw_pytest/validate_standalone.py'
+            sh """
+            apt update && apt install -y python3 python3-pip
+            python scratch_fw_pytest/validate_standalone.py
+            """
+
             }
         }
     }
