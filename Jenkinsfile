@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Run Tests') {
             steps {
-                sh 'pytest -v scratch_fw_pytest/tests/'
+                sh 'python scratch_fw_pytest/validate_standalone.py'
             }
         }
     }
