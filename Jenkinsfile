@@ -5,7 +5,8 @@ pipeline {
      stage('Debug Git') {
             steps {
                 sh 'git --version'
-                sh 'git ls-remote git@github.com:suryapratap78/PythonRevival.git'
+                sh 'pwd'
+                sh 'git ls-remote https://github.com/suryapratap78/PythonRevival.git'
             }
         }
         stage('Checkout Code') {
