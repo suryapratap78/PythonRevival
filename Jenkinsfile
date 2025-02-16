@@ -1,9 +1,16 @@
 pipeline {
     agent any
     stages {
+
+     stage('Debug Git') {
+            steps {
+                sh 'git --version'
+                sh 'git ls-remote git@github.com:suryapratap78/PythonRevival.git'
+            }
+        }
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/suryapratap78/PythonRevival.git'
+                git branch: 'main', url: 'https://github.com/suryapratap78/PythonRevival.git'
             }
         }
         stage('Install Dependencies') {
@@ -13,7 +20,7 @@ pipeline {
         }
         stage('Run Tests') {
             steps {
-                sh 'pytest scratch_fw_pytest/tests/'
+                sh 'pytest -v scratch_fw_pytest/tests/'
             }
         }
     }
