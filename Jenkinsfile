@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                sh 'pip install pytest'
+                sh 'pwd'
             }
         }
         stage('Run Tests') {
